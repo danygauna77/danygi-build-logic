@@ -1,0 +1,26 @@
+plugins {
+    id 'java-gradle-plugin'
+}
+
+group = 'io.danygi'
+version = '1.0.0-SNAPSHOT'
+
+repositories {
+    gradlePluginPortal()
+    mavenCentral()
+}
+
+gradlePlugin {
+    plugins {
+        quality {
+            id = "io.danygi.quality"
+            implementationClass = "io.danygi.buildlogic.QualityConventionPlugin"
+        }
+    }
+}
+
+dependencies {
+    implementation gradleApi()
+
+    implementation "com.github.spotbugs.snom:spotbugs-gradle-plugin:6.2.4"
+}
