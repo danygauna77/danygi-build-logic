@@ -2,7 +2,6 @@ package io.danygi.buildlogic.spotbugs;
 
 import com.github.spotbugs.snom.Confidence;
 import com.github.spotbugs.snom.Effort;
-import com.github.spotbugs.snom.SpotBugsExtension;
 import com.github.spotbugs.snom.SpotBugsTask;
 import org.gradle.api.Project;
 
