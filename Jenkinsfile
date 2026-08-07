@@ -1,7 +1,6 @@
 pipeline {
 agent any
 
-```
 stages {
 
     stage('Checkout') {
@@ -46,6 +45,5 @@ post {
         echo 'Build-Logic pipeline failed.'
     }
 }
-```
 
 }
