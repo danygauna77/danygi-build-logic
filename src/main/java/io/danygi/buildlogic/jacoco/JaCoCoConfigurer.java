@@ -40,6 +40,10 @@ public final class JaCoCoConfigurer {
             task.getReports().getXml().getRequired().set(true);
             task.getReports().getCsv().getRequired().set(false);
         });
+
+        project.getTasks().named("test").configure(task ->
+                task.finalizedBy(jacocoTestReport)
+        );
     }
 
     private static void configureCoverageVerification(Project project) {
