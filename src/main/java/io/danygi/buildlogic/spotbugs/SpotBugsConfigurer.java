@@ -11,7 +11,6 @@ public final class SpotBugsConfigurer {
     }
 
     public static void configure(Project project) {
-
         project.getPluginManager().apply("com.github.spotbugs");
 
         project.getTasks()
@@ -21,12 +20,6 @@ public final class SpotBugsConfigurer {
                     task.setIgnoreFailures(false);
                     task.getEffort().set(Effort.MAX);
                     task.getReportLevel().set(Confidence.LOW);
-
-                    task.getReports().named("html",
-                            report -> report.getRequired().set(true));
-
-                    task.getReports().named("xml",
-                            report -> report.getRequired().set(true));
                 });
     }
 }
