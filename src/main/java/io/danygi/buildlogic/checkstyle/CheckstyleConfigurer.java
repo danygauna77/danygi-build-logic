@@ -7,6 +7,7 @@ import org.gradle.api.plugins.quality.CheckstyleExtension;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public final class CheckstyleConfigurer {
 
@@ -55,7 +56,8 @@ public final class CheckstyleConfigurer {
 
             Files.copy(
                     resource,
-                    configFile.toPath()
+                    configFile.toPath(),
+                    StandardCopyOption.REPLACE_EXISTING
             );
 
             return configFile;
