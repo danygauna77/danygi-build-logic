@@ -20,6 +20,16 @@ public final class SpotBugsConfigurer {
                     task.setIgnoreFailures(false);
                     task.getEffort().set(Effort.MAX);
                     task.getReportLevel().set(Confidence.LOW);
+
+                    task.getReports()
+                            .create("html")
+                            .getRequired()
+                            .set(true);
+
+                    task.getReports()
+                            .create("xml")
+                            .getRequired()
+                            .set(true);
                 });
     }
 }
